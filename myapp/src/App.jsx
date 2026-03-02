@@ -1,26 +1,20 @@
-import UserCard from "./components/userCard"
+import { useState } from "react";
 
-function App() {
-  return (
-    <div>
-      <h1>Student Details</h1>
+function app(){
 
-      <UserCard name="Abhijeet" course="MCA" age={20} college="VIT">
-        <p>Topper of the class</p>
-        <button>View profile</button>
-      </UserCard>
-
-      <UserCard name="Rahul" course="MBA" age={21} college="IIT">
-        <button>View profile</button>
-      </UserCard>
-
-
-      <UserCard name="Sneha" course="MSc" age={19} college="DU">
-        <button>View profile</button>
-      </UserCard>
-
+  const [count, setCount] = useState(0)
+  return(
+    <div style={{ border: "1px solid black", padding: "10px", margin: "10px" }}>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        add
+      </button>
+      <br />
+      <button onClick={() => setCount(count - 1)}>
+        remove
+      </button>
     </div>
   )
 }
 
-export default App
+export default app
